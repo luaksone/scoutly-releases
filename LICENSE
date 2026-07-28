@@ -1,0 +1,33 @@
+SCOUTLY END USER LICENSE AGREEMENT (EULA)
+
+IMPORTANT: PLEASE READ THIS END USER LICENSE AGREEMENT ("AGREEMENT" OR "EULA") CAREFULLY BEFORE DOWNLOADING, INSTALLING, OR USING THE SCOUTLY SOFTWARE APPLICATION, EXECUTABLES, PACKAGES, OR ASSOCIATED DOCUMENTATION ("SOFTWARE").
+
+BY DOWNLOADING, INSTALLING, OR USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT DOWNLOAD, INSTALL, OR USE THE SOFTWARE.
+
+1. GRANT OF LICENSE
+Subject to the terms and conditions of this EULA, the copyright holder ("Licensor") grants you a non-exclusive, non-transferable, revocable, free-of-charge license to download, install, and execute the compiled binary versions of Scoutly ("Software") on personal or commercial devices solely for web monitoring and tracking purposes.
+
+2. FREESTORE & FREEWARE INTENT
+Scoutly is provided as freeware. You are permitted to use the Software without payment of license fees. However, free availability of the compiled binaries does not constitute a transfer of ownership, title, or open-source license grant. All intellectual property rights, trademarks, source code, and design assets remain the exclusive property of the Licensor.
+
+3. RESTRICTIONS
+You expressly agree NOT to, directly or indirectly:
+(a) Decompile, disassemble, reverse engineer, decrypt, extract, or otherwise attempt to derive the source code, underlying logic, architecture, or trade secrets of the Software;
+(b) Modify, alter, patch, adapt, translate, bundle, incorporate into other software, or create derivative works based upon the Software or any portion thereof;
+(c) Sell, rent, lease, sublicense, commercialize, or charge fees for access to or distribution of the Software or its binaries;
+(d) Remove, alter, or obscure any proprietary notices, copyright statements, trademarks, or digital signatures contained within or affixed to the Software;
+(e) Re-brand, re-package, or redistribute the Software under a different name or without explicit written consent from the Licensor.
+
+4. DISTRIBUTION
+You may direct users to official distribution channels (such as the official GitHub Releases page at https://github.com/luaksone/scoutly-releases) to download the Software. You may not host modified installer packages or distribute standalone modified binaries without authorization.
+
+5. TERMINATION
+This Agreement is effective until terminated. Your rights under this EULA will terminate automatically without notice if you fail to comply with any of its terms. Upon termination, you must cease all use of the Software and delete all copies of the Software in your possession.
+
+6. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, ACCURACY, OR NON-INFRINGEMENT. THE ENTIRE RISK AS TO THE QUALITY, PERFORMANCE, AND USE OF THE SOFTWARE IS WITH YOU.
+
+7. LIMITATION OF LIABILITY
+IN NO EVENT SHALL THE LICENSOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE, INCLUDING DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES.
+
+Copyright (c) 2026 Luaksone / Scoutly Project. All rights reserved.
