@@ -1,3 +1,3 @@
-c742f7421f04174bd763aabfa9f53cf8a8c73970313f98ae81490851915b3b34  Scoutly-Setup-1.12.5-x64.exe
-24c990d7bede39ad333c356db4b3cb03876a992465ac3cef17e36f5e9da652ca  Scoutly-Portable-1.12.5-x64.exe
-081c2fef21bdf0dcb11c40fd10e37c0ebe76360b139c691e6dcfb9dca688c648  Scoutly-Mobile-1.4.6-debug.apk
+86d7943bd69a1996167e38f4bb98fcc1b3dfa32906f273f244689ba36bc77f8d  Scoutly-Setup-1.12.6-x64.exe
+978dbb545fb6edff69ec2f71ca22e86026d9cfcdeaaf5bd808f76ba16d5df89f  Scoutly-Portable-1.12.6-x64.exe
+9d6f149beb6138dd958167ebbe5148f0fb507bdfec9b5df169d346c85008461d  Scoutly-Mobile-1.4.7-debug.apk
