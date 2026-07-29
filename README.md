@@ -1,5 +1,10 @@
 # Scoutly
 
+[![Windows](https://img.shields.io/badge/Windows-1.12.2-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.3-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
+
 Scoutly is a local-first website monitor and price tracker for Windows and Android. It watches product pages and other web content, keeps a history of observed values, and alerts you when something changes.
 
 This repository contains the official compiled releases. The application source code is not distributed here.
