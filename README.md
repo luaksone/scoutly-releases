@@ -27,9 +27,9 @@ The Android application provides a mobile view of the workspace, manual checks, 
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](Scoutly-Setup-1.12.1-x64.exe) | 1.12.1 |
-| Windows | [Portable application](Scoutly-Portable-1.12.1-x64.exe) | 1.12.1 |
-| Android | [APK](Scoutly-Mobile-1.4.2-debug.apk) | 1.4.2 |
+| Windows | [Installer](Scoutly-Setup-1.12.2-x64.exe) | 1.12.2 |
+| Windows | [Portable application](Scoutly-Portable-1.12.2-x64.exe) | 1.12.2 |
+| Android | [APK](Scoutly-Mobile-1.4.3-debug.apk) | 1.4.3 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -46,7 +46,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.1-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.2-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`.
