@@ -1,13 +1,15 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.4-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.5-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.5-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.6-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
 Scoutly is a local-first website monitor and price tracker for Windows and Android. It watches product pages and other web content, keeps a history of observed values, and alerts you when something changes.
 
 This repository contains the official compiled releases. The application source code is not distributed here.
+
+New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](GETTING_STARTED_FI.md)) for creating a monitor and configuring ntfy notifications and encrypted Supabase synchronization.
 
 ## What Scoutly does
 
@@ -32,9 +34,9 @@ The Android application provides a mobile view of the workspace, manual checks, 
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](Scoutly-Setup-1.12.4-x64.exe) | 1.12.4 |
-| Windows | [Portable application](Scoutly-Portable-1.12.4-x64.exe) | 1.12.4 |
-| Android | [APK](Scoutly-Mobile-1.4.5-debug.apk) | 1.4.5 |
+| Windows | [Installer](Scoutly-Setup-1.12.5-x64.exe) | 1.12.5 |
+| Windows | [Portable application](Scoutly-Portable-1.12.5-x64.exe) | 1.12.5 |
+| Android | [APK](Scoutly-Mobile-1.4.6-debug.apk) | 1.4.6 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -51,7 +53,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.4-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.5-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`.
