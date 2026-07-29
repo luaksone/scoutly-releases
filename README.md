@@ -1,60 +1,56 @@
-# Scoutly — Web Monitoring & Price Tracking Application
+# Scoutly
 
-[![Platform - Windows](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases)
-[![Platform - Android](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases)
-[![License - Freeware EULA](https://img.shields.io/badge/License-Freeware_EULA-blue.svg)](LICENSE)
-[![Latest Desktop Release](https://img.shields.io/badge/Desktop-v1.12.0-purple.svg)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Latest Android Release](https://img.shields.io/badge/Android-v1.3.0-green.svg)](https://github.com/luaksone/scoutly-releases/releases/latest)
+Scoutly is a local-first website monitor and price tracker for Windows and Android. It watches product pages and other web content, keeps a history of observed values, and alerts you when something changes.
 
-**Scoutly** is a fast, local-first web scraper and price tracking application built for **Windows Desktop** and **Android**. It automatically monitors product prices, site content, stock availability, and multi-site comparisons, sending real-time notifications whenever values change.
+This repository contains the official compiled releases. The application source code is not distributed here.
 
----
+## What Scoutly does
 
-## 🚀 Download Official Binaries
+Scoutly can be used to:
 
-The compiled executables and packages for Windows and Android are available under [GitHub Releases](https://github.com/luaksone/scoutly-releases/releases).
+- monitor product prices and stock availability;
+- track numeric values or selected content on a web page;
+- retain a history of observations and display changes over time;
+- compare related listings from different websites;
+- notify you when a monitored value changes;
+- use the same encrypted workspace on Windows and Android.
 
-| Platform | Package | Version | Download |
-| :--- | :--- | :--- | :--- |
-| **Windows Desktop** | Installer (`.exe`) | **v1.12.0** | [Download Setup](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.0/Scoutly-Setup-1.12.0-x64.exe) |
-| **Windows Desktop** | Portable (`.exe`) | **v1.12.0** | [Download Portable](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.0/Scoutly-Portable-1.12.0-x64.exe) |
-| **Android Mobile** | Debug APK (`.apk`) | **v1.3.0** | [Download APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.3.0/Scoutly-Mobile-1.3.0-debug.apk) |
+Price monitoring distinguishes a product's main price from unit prices such as price per item, kilogram, or litre. Scoutly also filters page elements such as cart totals and unrelated promotional values that should not become the monitored price.
 
----
+## Desktop and mobile applications
 
-## ✨ Key Features
+The Windows application is the primary workspace for creating and managing monitors, reviewing history, comparing listings, and correcting observations.
 
-- 🛒 **Automatic Price & Unit Price Extraction**: Inteligently separates total item prices (e.g. `15,99 €`) from unit/per-piece prices (`0,20 € / kpl`) with full support for store formats such as Tokmanni, Amazon, eBay, and regional retailers.
-- 📊 **Interactive Value Charts & Direct Entry Removal**: View historic price trends over hourly, daily, or monthly intervals. Remove erroneous page observations directly from the chart or history table.
-- 📉 **Clean Percentage Trends**: Clear trend indicators with precise 1-decimal rounding (e.g., `+1.5%`, `-2.3%`).
-- 🔔 **Cross-Platform Notifications**: Real-time alerts on Desktop and Android system notifications (heads-up alerts with high importance and status bar icons).
-- 🌐 **Multi-Site Comparison**: Track multiple product listings simultaneously and compare latest values across sites.
-- 🔒 **Local-First & Private**: Data remains stored locally on your device with optional encrypted workspace synchronization.
+The Android application provides a mobile view of the workspace, manual checks, background checks, and system notifications. An encrypted synchronization file can be used to share monitor and alert data between devices without requiring a Scoutly account or hosted Scoutly service.
 
----
+## Downloads
 
-## 🔒 Verification & SHA-256 Checksums
+| Platform | Package | Version |
+| --- | --- | --- |
+| Windows | [Installer](Scoutly-Setup-1.12.1-x64.exe) | 1.12.1 |
+| Windows | [Portable application](Scoutly-Portable-1.12.1-x64.exe) | 1.12.1 |
+| Android | [APK](Scoutly-Mobile-1.4.2-debug.apk) | 1.4.2 |
 
-To verify the integrity of your downloaded binaries:
+The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
-```
-CA081695509C4DDB6DE228C8C7677FD0C7B665F19925BA6E76C3B89E6B96E33F  Scoutly-Setup-1.12.0-x64.exe
-5F3FCFF27AEA925F10472101A1B799EF2580EE1E689AB7C24F261052C26F94A6  Scoutly-Portable-1.12.0-x64.exe
-3307EF83333BBB3F16CA658FBA2B53A40EAC1FAA62A88D548A8450B017CA772A  Scoutly-Mobile-1.4.1-debug.apk
-```
+## Data and privacy
 
-Verification command on Windows PowerShell:
+Scoutly stores monitoring data locally. Network requests are made to the pages you choose to monitor and, when configured, to the location of your encrypted synchronization file. Scoutly does not require an account.
+
+Website owners may restrict automated requests. You are responsible for configuring reasonable check intervals and using Scoutly in accordance with the terms and applicable rules of each website.
+
+## Verifying downloads
+
+SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUMS.txt).
+
+On Windows, a downloaded file can be checked with PowerShell:
+
 ```powershell
-Get-FileHash Scoutly-Setup-1.12.0-x64.exe
+Get-FileHash .\Scoutly-Setup-1.12.1-x64.exe -Algorithm SHA256
 ```
 
----
+Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`.
 
-## 📜 License & Usage Terms
+## License
 
-Scoutly is distributed as **Freeware** under the terms of the **Scoutly End User License Agreement (EULA)**.
-
-- **Free for Personal & Commercial Use**: You are free to download and use Scoutly without charge.
-- **Restrictions**: Decompilation, reverse engineering, unauthorized modification, patching, re-bundling, or redistributing modified versions under another name is strictly prohibited.
-
-For complete terms, read the [LICENSE](LICENSE) file.
+Scoutly is distributed as freeware under the [Scoutly End User License Agreement](LICENSE). The agreement permits use of the compiled application and restricts reverse engineering, modification, and redistribution.
