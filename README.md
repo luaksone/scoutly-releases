@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.7-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.8-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.8-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.9-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -34,9 +34,9 @@ The Android application provides a mobile view of the workspace, manual checks, 
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](Scoutly-Setup-1.12.7-x64.exe) | 1.12.7 |
-| Windows | [Portable application](Scoutly-Portable-1.12.7-x64.exe) | 1.12.7 |
-| Android | [APK](Scoutly-Mobile-1.4.8-debug.apk) | 1.4.8 |
+| Windows | [Installer](Scoutly-Setup-1.12.8-x64.exe) | 1.12.8 |
+| Windows | [Portable application](Scoutly-Portable-1.12.8-x64.exe) | 1.12.8 |
+| Android | [APK](Scoutly-Mobile-1.4.9-debug.apk) | 1.4.9 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -53,7 +53,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.7-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.8-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`.
