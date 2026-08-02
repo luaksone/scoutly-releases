@@ -1,7 +1,7 @@
 # Scoutly
 
 [![Windows](https://img.shields.io/badge/Windows-1.12.8-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.9-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.10-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -36,7 +36,7 @@ The Android application provides a mobile view of the workspace, manual checks, 
 | --- | --- | --- |
 | Windows | [Installer](Scoutly-Setup-1.12.8-x64.exe) | 1.12.8 |
 | Windows | [Portable application](Scoutly-Portable-1.12.8-x64.exe) | 1.12.8 |
-| Android | [APK](Scoutly-Mobile-1.4.9-debug.apk) | 1.4.9 |
+| Android | [APK](Scoutly-Mobile-1.4.10-debug.apk) | 1.4.10 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
