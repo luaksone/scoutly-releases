@@ -11,6 +11,13 @@ This repository contains the official compiled releases. The application source 
 
 New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](GETTING_STARTED_FI.md)) for creating a monitor and configuring ntfy notifications and encrypted Supabase synchronization.
 
+## Latest package update
+
+- Monitor checks now lengthen their effective interval automatically after repeated HTTP 403, 408, 425, 429, or 503 responses, with a configurable trigger threshold and automatic recovery after a successful check.
+- Offer magazines now support comfortable and compact layouts, hiding and restoring retailers, and synchronized pinned/hidden preferences across Windows and Android.
+- Price Finder remains marked experimental and is separated into the desktop Tools section.
+- Request-refusal messages and structured error logging are consistent across both applications.
+
 ## What Scoutly does
 
 Scoutly can be used to:
