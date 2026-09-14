@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.21-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.21-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.22-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.22-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,9 +13,10 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-- Windows 1.12.21 fixes the recurring startup recovery dialog caused by valid saved alert values being incorrectly rejected as damaged observations.
-- Alert values are retained across restarts. Upgrade while keeping existing app data; another backup restore should not be needed for this issue.
-- Android remains at 1.4.21, unchanged from the previous release.
+- Windows 1.12.22 and Android 1.4.22 fix S-kaupat product checks that repeatedly failed with HTTP 429 by using browser transport from the first request.
+- Existing S-kaupat monitors use the fix automatically. Genuine refusals still respect site cooldowns.
+- Android also fixes browser initialization for cold background checks and preserves Retry-After instructions.
+- Includes the Windows startup recovery fix from 1.12.21. Upgrade while keeping existing app data.
 - Independently signed update manifests are included. Windows executables remain unsigned by Authenticode.
 
 ## What Scoutly does
@@ -41,9 +42,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.21/Scoutly-Setup-1.12.21-x64.exe) | 1.12.21 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.21/Scoutly-Portable-1.12.21-x64.exe) | 1.12.21 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.21/Scoutly-Mobile-1.4.21-release.apk) | 1.4.21 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.22/Scoutly-Setup-1.12.22-x64.exe) | 1.12.22 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.22/Scoutly-Portable-1.12.22-x64.exe) | 1.12.22 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.22/Scoutly-Mobile-1.4.22-release.apk) | 1.4.22 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -60,7 +61,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.21-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.22-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
