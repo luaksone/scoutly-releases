@@ -71,7 +71,7 @@ The setup SQL creates only the data structures and access rules Scoutly needs. I
 
 After pairing, monitors, folders, history, alerts, pins, and learned site rules can move between devices. Choose an execution owner for each monitor:
 
-Windows 1.12.24 / Android 1.4.24 compress sync data before encryption. Cloud history keeps the newest 10,000 live runs or 16 MiB, within existing workspace quotas and retention. Full local history keeps the device's existing retention settings; a new device receives the cloud history cache. Essential data syncs before detailed history. For an existing project, update both apps, export any history needed outside the devices, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Supabase-Free-Plan-1.12.24.sql), then restart both apps. Keep the same pairing code.
+Windows 1.12.25 / Android 1.4.25 compress sync data before encryption. Cloud history keeps the newest 10,000 live runs or 16 MiB, within existing workspace quotas and retention. Full local history keeps the device's existing retention settings; a new device receives the cloud history cache. Essential data syncs before detailed history. For an existing project, update both apps, export any history needed outside the devices, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.25/Scoutly-Supabase-Free-Plan-1.12.25.sql), then restart both apps. Keep the same pairing code.
 
 - **Desktop** checks it only on the computer.
 - **Android** checks it only on the phone.
