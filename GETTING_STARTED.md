@@ -56,12 +56,13 @@ Supabase acts as a relay between your devices. Scoutly encrypts workspace data o
 3. Select **Save setup SQL file**.
 4. Open the Supabase project's **SQL Editor**, paste the saved file, and run it.
 5. In the Supabase project settings, copy the **Project URL** and **Publishable key**. A legacy anonymous key is also supported.
+6. In SQL Editor, run `select public.scoutly_sync_issue_setup_token();` and copy the one-time setup code. It expires after 30 minutes and creates one workspace. Joining an existing workspace uses its pairing code instead.
 
 The setup SQL creates only the data structures and access rules Scoutly needs. If a later Scoutly version reports that the remote schema is outdated, save and run the latest setup SQL again.
 
 ### Create and pair a workspace
 
-1. Enter the Project URL, publishable key, and a recognizable device name in Scoutly for Windows.
+1. Enter the Project URL, publishable key, one-time setup code, and a recognizable device name in Scoutly for Windows.
 2. Select **Create encrypted workspace**.
 3. Keep the generated pairing code private. Anyone with the code and Supabase connection details can decrypt the workspace.
 4. In Scoutly Mobile, open **Settings**, then **Scoutly Sync**.
@@ -69,6 +70,8 @@ The setup SQL creates only the data structures and access rules Scoutly needs. I
 6. Start the initial synchronization.
 
 After pairing, monitors, folders, history, alerts, pins, and learned site rules can move between devices. Choose an execution owner for each monitor:
+
+Windows 1.12.24 / Android 1.4.24 compress sync data before encryption. Cloud history keeps the newest 10,000 live runs or 16 MiB, within existing workspace quotas and retention. Full local history keeps the device's existing retention settings; a new device receives the cloud history cache. Essential data syncs before detailed history. For an existing project, update both apps, export any history needed outside the devices, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Supabase-Free-Plan-1.12.24.sql), then restart both apps. Keep the same pairing code.
 
 - **Desktop** checks it only on the computer.
 - **Android** checks it only on the phone.

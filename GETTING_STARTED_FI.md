@@ -56,12 +56,13 @@ Supabase välittää tiedot laitteiden välillä. Scoutly salaa työtilan tiedot
 3. Valitse **Tallenna asennuksen SQL-tiedosto**.
 4. Avaa Supabase-projektin **SQL Editor**, liitä tallennetun tiedoston sisältö ja suorita se.
 5. Kopioi Supabase-projektin asetuksista **Project URL** ja **Publishable key**. Myös vanha anonyymi avain toimii.
+6. Suorita SQL Editorissa `select public.scoutly_sync_issue_setup_token();` ja kopioi kertakäyttöinen asennuskoodi. Koodi on voimassa 30 minuuttia ja luo yhden työtilan. Olemassa olevaan työtilaan liittyminen käyttää sen parituskoodia.
 
 SQL-asennus luo vain Scoutlyn tarvitsemat tietorakenteet ja käyttöoikeussäännöt. Jos myöhempi Scoutly-versio ilmoittaa etärakenteen olevan vanhentunut, tallenna ja suorita uusin SQL-asennustiedosto uudelleen.
 
 ### Työtilan luominen ja parittaminen
 
-1. Syötä Windowsin Scoutlyyn projektin osoite, julkaistava avain ja laitetta kuvaava nimi.
+1. Syötä Windowsin Scoutlyyn projektin osoite, julkaistava avain, kertakäyttöinen asennuskoodi ja laitetta kuvaava nimi.
 2. Valitse **Luo salattu työtila**.
 3. Pidä luotu parituskoodi salassa. Koodi ja Supabase-yhteystiedot mahdollistavat työtilan avaamisen.
 4. Avaa Scoutly Mobilessa **Asetukset** ja **Scoutly-synkronointi**.
@@ -69,6 +70,8 @@ SQL-asennus luo vain Scoutlyn tarvitsemat tietorakenteet ja käyttöoikeussään
 6. Käynnistä ensimmäinen synkronointi.
 
 Parituksen jälkeen seurannat, kansiot, historia, hälytykset, kiinnitykset ja opitut sivustosäännöt voivat siirtyä laitteiden välillä. Valitse kullekin seurannalle suorittava laite:
+
+Windows 1.12.24 / Android 1.4.24 pakkaa synkronoitavat tiedot ennen salausta. Pilvihistoria säilyttää uusimmat 10 000 havaintoa tai enintään 16 MiB salattuja historiatietoja työtilan nykyisten rajojen ja säilytysajan puitteissa. Paikallinen historia noudattaa laitteen nykyisiä säilytysasetuksia; uusi laite saa pilvessä olevan historiavälimuistin. Seurannat, asetukset ja hälytykset synkronoidaan ennen yksityiskohtaista historiaa. Päivitä molemmat sovellukset, vie tarvittava historia talteen, suorita nykyisessä Supabase-projektissa [täydellinen Free Plan SQL -päivitys](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Supabase-Free-Plan-1.12.24.sql) ja käynnistä molemmat sovellukset uudelleen. Nykyinen parituskoodi toimii edelleen.
 
 - **Tietokone** tarkistaa seurannan vain tietokoneella.
 - **Android** tarkistaa seurannan vain puhelimessa.

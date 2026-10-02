@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.23-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.23-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.24-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.24-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,13 +13,16 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-- Windows 1.12.23 adds a reversible **Sync this desktop** switch. Pausing stops cloud-sync retries from this PC while keeping its pairing, local data, and encrypted cloud workspace.
-- Android 1.4.23 is the matching non-debuggable APK rebuild, using version code 38 and the existing upgrade-compatible signing certificate.
-- Windows 1.12.22 and Android 1.4.22 fixed S-kaupat product checks that repeatedly failed with HTTP 429 by using browser transport from the first request.
-- Existing S-kaupat monitors use the fix automatically. Genuine refusals still respect site cooldowns.
-- Android also fixes browser initialization for cold background checks and preserves Retry-After instructions.
-- Includes the Windows startup recovery fix from 1.12.21. Upgrade while keeping existing app data.
+- Windows 1.12.24 and Android 1.4.24 reduce encrypted sync storage and database work. A representative listing-history fixture used 90.32% fewer encrypted bytes; actual savings depend on the data.
+- The cloud keeps the newest 10,000 live runs or 16 MiB of run payloads, within the existing workspace quotas and retention. Full local history follows the device's existing retention settings. Monitors, settings, alerts, and deletion evidence are preserved.
+- Essential data continues syncing when history cannot fit. Older backlog uploads cannot displace newer cloud history. Routine sync skips accepted history, empty local transactions, and unnecessary screen reloads.
+- Fixes workspace-switch races, lost device-local request headers, Android history arriving before its monitor, and stale alert baselines after changing price type.
+- Updates the Electron runtime and affected build dependencies; dependency audits pass and packaging verifies installed versions against the lockfile.
+- Android uses version code 39 and the existing upgrade-compatible signing certificate. The APK is non-debuggable; its certificate subject remains Android Debug.
+- Retains the desktop sync-pause switch, S-kaupat browser transport, and startup recovery fixes. Upgrade while keeping existing app data.
 - Independently signed update manifests are included. Windows executables remain unsigned by Authenticode.
+
+**Supabase users:** Update both apps, export any history needed outside the devices, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Supabase-Free-Plan-1.12.24.sql) once in the existing project's SQL Editor, then restart both apps. Pairing codes remain valid. Installing the apps does not upgrade the hosted database. Older clients receive an update instruction once compressed data is published. Cloud history over the rolling budget is retired on maintenance; full local copies remain subject to local retention. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Supabase-1.12.24.zip) includes usage queries; encrypted payload counters exclude PostgreSQL row/index overhead and other project data.
 
 ## What Scoutly does
 
@@ -44,9 +47,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.23/Scoutly-Setup-1.12.23-x64.exe) | 1.12.23 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.23/Scoutly-Portable-1.12.23-x64.exe) | 1.12.23 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.23/Scoutly-Mobile-1.4.23-release.apk) | 1.4.23 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Setup-1.12.24-x64.exe) | 1.12.24 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Portable-1.12.24-x64.exe) | 1.12.24 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.24/Scoutly-Mobile-1.4.24-release.apk) | 1.4.24 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -63,7 +66,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.23-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.24-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
