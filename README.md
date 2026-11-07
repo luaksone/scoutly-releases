@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.25-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.25-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.26-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.26-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,17 +13,35 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-- Windows 1.12.25 and Android 1.4.25 reduce encrypted sync storage and database work. A representative listing-history fixture used 90.32% fewer encrypted bytes; actual savings depend on the data.
-- The cloud keeps the newest 10,000 live runs or 16 MiB of run payloads, within the existing workspace quotas and retention. Full local history follows the device's existing retention settings. Monitors, settings, alerts, and deletion evidence are preserved.
-- Essential data continues syncing when history cannot fit. Older backlog uploads cannot displace newer cloud history. Routine sync skips accepted history, empty local transactions, and unnecessary screen reloads.
-- Fixes workspace-switch races, lost device-local request headers, Android history arriving before its monitor, and stale alert baselines after changing price type.
-- Pairing reset requires a completed sync and is unavailable while paused, protecting newer cloud data.
-- Updates the Electron runtime and affected build dependencies; dependency audits pass and packaging verifies installed versions against the lockfile.
-- Android uses version code 40 and the existing upgrade-compatible signing certificate. The APK is non-debuggable; its certificate subject remains Android Debug.
-- Retains the desktop sync-pause switch, S-kaupat browser transport, and startup recovery fixes. Upgrade while keeping existing app data.
-- Independently signed update manifests are included. Windows executables remain unsigned by Authenticode.
+Windows 1.12.26 and Android 1.4.26 make adding a monitor on the phone quick and include the fixes from a full code review of both apps. The [release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.26) list every change.
 
-**Supabase users:** Update both apps, export any history needed outside the devices, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.25/Scoutly-Supabase-Free-Plan-1.12.25.sql) once in the existing project's SQL Editor, then restart both apps. Pairing codes remain valid. Installing the apps does not upgrade the hosted database. Older clients receive an update instruction once compressed data is published. Cloud history over the rolling budget is retired on maintenance; full local copies remain subject to local retention. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.25/Scoutly-Supabase-1.12.25.zip) includes usage queries; encrypted payload counters exclude PostgreSQL row/index overhead and other project data.
+**Install this version manually.** The update-signing key has changed, so 1.12.25 and earlier will not offer this release as an in-app update. Install Setup and the APK below over your current version; monitors, history and settings are kept. In-app updates work again from 1.12.26 / 1.4.26 on.
+
+**Android 1.4.26**
+
+- **Share to Scoutly:** in the browser, choose Share and then **Monitor with Scoutly**. The editor opens with the address filled in and the price already detected. Saving returns to the browser and runs the first check.
+- **New monitor shortcut:** long-press the app icon. The Overview page also has a New monitor button.
+- **Simpler editor:**
+  - a paste button;
+  - a warning for pages you already monitor;
+  - one-tap choices for what to track, when to alert and how often to check;
+  - an always-visible Save.
+- **Not the right price?** lets you pick another verified price from the page.
+- **Background checks run again on Android 12 and later while the app is closed.** A failing sync no longer slows scheduled checks to once every five hours.
+- **Fixes:** decimal-comma target prices, duplicate monitors from a double tap, merged old/new prices, empty values read as "null", new-item alert floods, and unsupported desktop alert rules. A phone coming back online shows at most five alert notifications.
+- Android uses version code 41 and the existing upgrade-compatible signing certificate. The APK is non-debuggable; its certificate subject remains Android Debug.
+
+**Windows 1.12.26**
+
+- **Prices:** "$1,299" and "1.299 €" read as thousands, and monitors that stored the old reading recover automatically. A selector that stops matching no longer switches to a related product's price.
+- **Reliability:** automatic price detection no longer freezes on number-heavy pages, and browser checks no longer grow memory. Queued monitors can be edited, and failed checks back off.
+- **Alerts:** Finnish, Swedish and German out-of-stock labels are recognised, and slow deliveries no longer send an alert twice.
+- **Sync:** restoring the startup backup no longer overwrites newer data on other devices, and **Create encrypted workspace** works again. The sync index stays bounded, and settings no longer bounce between devices.
+- **Screens:** save errors appear in the editor, background sync keeps unsaved Settings edits, and the Finnish interface no longer translates monitor names or page values.
+- Security updates: Electron 43.8.7, re2js 2.9.1 and Android jsoup 1.23.2 address newly published advisories; dependency audits pass.
+- Independently signed update manifests are included. Windows executables remain unsigned by Authenticode. Upgrade while keeping existing app data.
+
+**Supabase users:** no SQL change in this release. Projects already upgraded with the 1.12.25 SQL need no action. Otherwise run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.26/Scoutly-Supabase-Free-Plan-1.12.26.sql) once in the existing project's SQL Editor, then restart both apps. Pairing codes remain valid, and installing the apps does not upgrade the hosted database. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.26/Scoutly-Supabase-1.12.26.zip) includes usage queries.
 
 ## What Scoutly does
 
@@ -48,9 +66,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.25/Scoutly-Setup-1.12.25-x64.exe) | 1.12.25 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.25/Scoutly-Portable-1.12.25-x64.exe) | 1.12.25 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.25/Scoutly-Mobile-1.4.25-release.apk) | 1.4.25 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.26/Scoutly-Setup-1.12.26-x64.exe) | 1.12.26 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.26/Scoutly-Portable-1.12.26-x64.exe) | 1.12.26 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.26/Scoutly-Mobile-1.4.26-release.apk) | 1.4.26 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -67,7 +85,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.25-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.26-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
