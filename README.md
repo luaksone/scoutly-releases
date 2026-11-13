@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.28-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.28-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.29-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.29-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,31 +13,29 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-Windows 1.12.28 and Android 1.4.28 make both apps faster and smoother, rebuild the Offers page, and fix Android settings that were lost on restart. The [release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.28) list every change. Both apps offer this release as an in-app update from 1.12.27 / 1.4.27.
+Windows 1.12.29 and Android 1.4.29 fix Gigantti checks, make Windows start and save faster with a long history, and speed up pull-to-refresh on Android. The [release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.29) list every change. Both apps offer this release as an in-app update from 1.12.28 / 1.4.28.
 
-**Offers page (Android and Windows)**
+**Gigantti and other bot-checked shops (Android and Windows)**
 
-- Every shop is listed at once with its official link, and each shop fills in as soon as its page answers.
-- The catalogue from your previous visit is shown straight away and refreshed in the background.
-- A shop that cannot be reached keeps the publications found earlier.
+- **Fixed:** Gigantti product checks failed with "The website temporarily limited this request (HTTP 429)". Gigantti pages now load through the app's built-in browser, which passes the shop's bot check by itself.
+- A shop that answers with a labelled bot check gets one browser attempt, and the message no longer calls it a rate limit.
+- Gigantti product images load again.
 
-**Android 1.4.28**
+**Windows 1.12.29**
 
-- **Fixed:** favourite shops, hidden shops, compact view and the selected region on the Offers page were lost when the app restarted. Choices made in earlier versions were never stored, so set them once more.
-- **Fixed:** the extra pages of a multi-site monitor were dropped from the phone's storage on restart.
-- **Offers page:** shop shortcuts at the top, instant favourite, hide and compact toggles, and pull-to-refresh for the offers.
-- **Navigation:** tabs cross-fade, and each tab keeps its scroll position, search and filters when you open a monitor and come back.
-- **Speed:** smoother scrolling in Finnish and in lists with product images, and faster checks on the same shop.
-- Android uses version code 43 and the existing upgrade-compatible signing certificate. The APK is non-debuggable; its certificate subject remains Android Debug.
-
-**Windows 1.12.28**
-
-- Product thumbnails and shop logos are no longer downloaded again each time a page is opened.
-- Monitor and alert lists redraw faster, in English and Finnish.
-- The monitor page requests its history once and loads long charts faster.
+- The window opens without waiting for a full database backup; the backup runs in the background and never delays saving.
+- Saving after a check writes only what changed, so it is much faster with a long history and uses less memory.
+- Monitor lists redraw only the rows that changed, and sync skips its second upload pass when nothing changed.
 - Independently signed update manifests are included. Windows executables remain unsigned by Authenticode. Upgrade while keeping existing app data.
 
-**Supabase users:** no SQL change in this release. Projects already upgraded with the 1.12.25 SQL need no action. Otherwise run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.28/Scoutly-Supabase-Free-Plan-1.12.28.sql) once in the existing project's SQL Editor, then restart both apps. Pairing codes remain valid, and installing the apps does not upgrade the hosted database. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.28/Scoutly-Supabase-1.12.28.zip) includes usage queries.
+**Android 1.4.29**
+
+- Pull-to-refresh checks up to three shops at the same time, one request at a time per shop.
+- The sync state has its own files, so the app starts faster when sync is set up.
+- A busy built-in browser no longer pauses a shop's checks for five minutes.
+- Android uses version code 44 and the existing upgrade-compatible signing certificate. The APK is non-debuggable; its certificate subject remains Android Debug.
+
+**Supabase users:** no SQL change in this release. Projects already upgraded with the 1.12.25 SQL need no action. Otherwise run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.29/Scoutly-Supabase-Free-Plan-1.12.29.sql) once in the existing project's SQL Editor, then restart both apps. Pairing codes remain valid, and installing the apps does not upgrade the hosted database. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.29/Scoutly-Supabase-1.12.29.zip) includes usage queries.
 
 ## What Scoutly does
 
@@ -62,9 +60,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.28/Scoutly-Setup-1.12.28-x64.exe) | 1.12.28 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.28/Scoutly-Portable-1.12.28-x64.exe) | 1.12.28 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.28/Scoutly-Mobile-1.4.28-release.apk) | 1.4.28 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.29/Scoutly-Setup-1.12.29-x64.exe) | 1.12.29 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.29/Scoutly-Portable-1.12.29-x64.exe) | 1.12.29 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.29/Scoutly-Mobile-1.4.29-release.apk) | 1.4.29 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -81,7 +79,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.28-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.29-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
