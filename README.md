@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.30-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.30-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.31-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.31-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,13 +13,14 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-Windows 1.12.30 and Android 1.4.30 introduce new navigation on both platforms, a redesigned Android app, and clearer value-history charts. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.30).
+Windows 1.12.31 and Android 1.4.31 keep both apps in Finnish when Finnish is selected, make scrolling smoother on both platforms, make the Android app faster to start and to update, and keep it running when its built-in browser crashes during a check. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.31). Both apps offer this release as an in-app update from 1.12.30 / 1.4.30.
 
-- **Windows:** Pages cross-fade, monitor photos animate into detail views, and monitor details preload in the background. Windows reduced-motion settings are respected.
-- **Android:** Redesigned Overview, Monitors, Alerts, and monitor details add price-drop filters, swipe actions, interactive charts, and a recent-check timeline. The APK uses version code 45 and the existing upgrade-compatible signing certificate.
-- **Value history:** Hourly defaults to the last 48 hours, Daily to the last 30 days, and Monthly covers the full history. The charts adjust their resolution when observations are sparse.
+- **Finnish:** Error messages from checks, sync, updates and the sync relay no longer appear in English when Finnish is selected, and both apps use the same wording.
+- **Windows:** Monitor cards and rows outside the window are not laid out or drawn until you scroll near them, and the top bar no longer uses a blurred background.
+- **Android:** Trend lines and charts are prepared in the background, and the app carries a startup profile so Android compiles its main code ahead of time. Updates installed by 1.4.31 or later are compiled during installation. Browser checks, such as Gigantti, run in a separate process, so a browser crash fails only that check. The page address of a Price Finder monitor from Windows is read-only on the phone, because sync always restored the desktop's search; add a specific page as a new monitor instead. The APK uses version code 46 and the existing upgrade-compatible signing certificate.
+- **Sync:** Quota errors show the usage and the limit, and the quota compatibility script no longer replaces the newer cleanup function when it is run again.
 
-**Supabase users:** no SQL change in this release. Projects already upgraded with the 1.12.25 SQL need no action. Otherwise run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.30/Scoutly-Supabase-Free-Plan-1.12.30.sql) once in the existing project's SQL Editor, then restart both apps. Pairing codes remain valid, and installing the apps does not upgrade the hosted database. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.30/Scoutly-Supabase-1.12.30.zip) includes usage queries.
+**Supabase users:** sync works as before without any SQL change. For the clearer quota errors, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.31/Scoutly-Supabase-Free-Plan-1.12.31.sql) once in the existing project's SQL Editor, then restart both apps. Run it as well if you ran the separate quota compatibility script (migration 006) after installing the 1.12.25 SQL. Pairing codes remain valid, and installing the apps does not upgrade the hosted database. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.31/Scoutly-Supabase-1.12.31.zip) includes usage queries.
 
 ## What Scoutly does
 
@@ -44,9 +45,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.30/Scoutly-Setup-1.12.30-x64.exe) | 1.12.30 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.30/Scoutly-Portable-1.12.30-x64.exe) | 1.12.30 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.30/Scoutly-Mobile-1.4.30-release.apk) | 1.4.30 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.31/Scoutly-Setup-1.12.31-x64.exe) | 1.12.31 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.31/Scoutly-Portable-1.12.31-x64.exe) | 1.12.31 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.31/Scoutly-Mobile-1.4.31-release.apk) | 1.4.31 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -63,7 +64,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.30-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.31-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
