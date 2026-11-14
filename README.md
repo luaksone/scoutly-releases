@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.34-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.34-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.35-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.35-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,14 +13,12 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-Windows 1.12.34 and Android 1.4.34 tell you when sync stops working, make list monitors behave the same on both devices, free disk space that old downloads took on Windows, and update both apps' components. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.34). Both apps offer this release as an in-app update from 1.12.33 / 1.4.33.
+Windows 1.12.35 and Android 1.4.35 update both apps' components and build tools; nothing changes in how the apps work. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.35). Both apps offer this release as an in-app update from 1.12.34 / 1.4.34.
 
-- **Sync alerts:** Scoutly for Windows notifies you, also on your phone through ntfy, when sync has failed for a day or been paused for three. The Android app notifies you when its own sync fails or when the monitors that Scoutly for Windows checks stop receiving results. Settings → Sync on Windows can copy a diagnostics report and open the new log file.
-- **List monitors:** after a check on the phone, Scoutly for Windows no longer sends a second "changed" alert for an unchanged list. Both apps now see a list as changed when any item changes, and the new-items chart on Windows counts the items the phone found first.
-- **Windows:** installers of already installed updates are deleted, and recovery copies and the old storage file go to the Recycle Bin after 30 days, which can free more than a gigabyte. Deleting the sync workspace or resetting the pairing code works for large workspaces too. Electron 45 brings Chromium 156 security fixes.
-- **Android:** updated components. The APK uses version code 49 and the existing upgrade-compatible signing certificate.
+- **Windows:** saved sync credentials and the ntfy access token use Electron's current encryption API, which upcoming Electron versions require. Credentials saved by earlier versions keep working.
+- **Android:** page checks and product images use OkHttp 5, and the app is built with Android Gradle Plugin 9.5 and Kotlin 2.4. The APK uses version code 50 and the existing upgrade-compatible signing certificate.
 
-**Supabase users:** run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Supabase-Free-Plan-1.12.34.sql) once in the existing project's SQL Editor. It adds step-by-step clearing for workspace deletion and pairing resets; everything else is as in 1.12.33. Restarting the apps and pairing again are not needed, and installing the apps does not upgrade the hosted database. Apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Supabase-1.12.34.zip) includes usage queries.
+**Supabase users:** no SQL change; the 1.12.34 SQL is current. If you have not run it yet, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Supabase-Free-Plan-1.12.35.sql) once in the existing project's SQL Editor: it adds step-by-step clearing for workspace deletion and pairing resets. Restarting the apps and pairing again are not needed, and apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Supabase-1.12.35.zip) includes usage queries.
 
 ## What Scoutly does
 
@@ -45,9 +43,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Setup-1.12.34-x64.exe) | 1.12.34 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Portable-1.12.34-x64.exe) | 1.12.34 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Mobile-1.4.34-release.apk) | 1.4.34 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Setup-1.12.35-x64.exe) | 1.12.35 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Portable-1.12.35-x64.exe) | 1.12.35 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Mobile-1.4.35-release.apk) | 1.4.35 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -64,7 +62,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.34-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.35-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
