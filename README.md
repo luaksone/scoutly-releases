@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.33-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.33-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.34-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.34-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,13 +13,14 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-Windows 1.12.33 and Android 1.4.33 make Scoutly Sync recover by itself from a cleanup backlog in Supabase, show product images from shops behind a Cloudflare check in Scoutly for Windows, and make the latest checks on Android read the same whichever device ran them. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.33). Both apps offer this release as an in-app update from 1.12.32 / 1.4.32.
+Windows 1.12.34 and Android 1.4.34 tell you when sync stops working, make list monitors behave the same on both devices, free disk space that old downloads took on Windows, and update both apps' components. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.34). Both apps offer this release as an in-app update from 1.12.33 / 1.4.33.
 
-- **Scoutly Sync:** A Supabase project that went weeks without cleanup could fail every sync with "canceling statement due to statement timeout". With the new SQL, cleanup runs in short steps that stay within Supabase's time limit, both apps repeat it during a sync until it is done, and a failed cleanup no longer stops the sync. Running the SQL finishes an existing backlog at once.
-- **Windows:** Product images from shops behind Cloudflare, such as Proshop, now show, and so do images whose server reports the wrong file format. Settings → Sync shows the actual sync error.
-- **Android:** A list monitor's checks from Scoutly for Windows show the newest item instead of a raw list, and link monitors created on the phone now reach Scoutly for Windows. The APK uses version code 48 and the existing upgrade-compatible signing certificate.
+- **Sync alerts:** Scoutly for Windows notifies you, also on your phone through ntfy, when sync has failed for a day or been paused for three. The Android app notifies you when its own sync fails or when the monitors that Scoutly for Windows checks stop receiving results. Settings → Sync on Windows can copy a diagnostics report and open the new log file.
+- **List monitors:** after a check on the phone, Scoutly for Windows no longer sends a second "changed" alert for an unchanged list. Both apps now see a list as changed when any item changes, and the new-items chart on Windows counts the items the phone found first.
+- **Windows:** installers of already installed updates are deleted, and recovery copies and the old storage file go to the Recycle Bin after 30 days, which can free more than a gigabyte. Deleting the sync workspace or resetting the pairing code works for large workspaces too. Electron 45 brings Chromium 156 security fixes.
+- **Android:** updated components. The APK uses version code 49 and the existing upgrade-compatible signing certificate.
 
-**Supabase users:** run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.33/Scoutly-Supabase-Free-Plan-1.12.33.sql) once in the existing project's SQL Editor. It adds the step-by-step cleanup and finishes any pending cleanup; restarting the apps and pairing again are not needed, and installing the apps does not upgrade the hosted database. Apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.33/Scoutly-Supabase-1.12.33.zip) includes usage queries.
+**Supabase users:** run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Supabase-Free-Plan-1.12.34.sql) once in the existing project's SQL Editor. It adds step-by-step clearing for workspace deletion and pairing resets; everything else is as in 1.12.33. Restarting the apps and pairing again are not needed, and installing the apps does not upgrade the hosted database. Apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Supabase-1.12.34.zip) includes usage queries.
 
 ## What Scoutly does
 
@@ -44,9 +45,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.33/Scoutly-Setup-1.12.33-x64.exe) | 1.12.33 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.33/Scoutly-Portable-1.12.33-x64.exe) | 1.12.33 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.33/Scoutly-Mobile-1.4.33-release.apk) | 1.4.33 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Setup-1.12.34-x64.exe) | 1.12.34 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Portable-1.12.34-x64.exe) | 1.12.34 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.34/Scoutly-Mobile-1.4.34-release.apk) | 1.4.34 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -63,7 +64,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.33-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.34-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
