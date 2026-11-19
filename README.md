@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.35-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.35-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.36-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.36-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,12 +13,12 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-Windows 1.12.35 and Android 1.4.35 update both apps' components and build tools; nothing changes in how the apps work. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.35). Both apps offer this release as an in-app update from 1.12.34 / 1.4.34.
+Windows 1.12.36 and Android 1.4.36 make Scoutly for Windows much lighter with a long check history and update both apps' components. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.36). Both apps offer this release as an in-app update from 1.12.35 / 1.4.35.
 
-- **Windows:** saved sync credentials and the ntfy access token use Electron's current encryption API, which upcoming Electron versions require. Credentials saved by earlier versions keep working.
-- **Android:** page checks and product images use OkHttp 5, and the app is built with Android Gradle Plugin 9.5 and Kotlin 2.4. The APK uses version code 50 and the existing upgrade-compatible signing certificate.
+- **Windows:** a check of a list monitor, such as new forum threads, saves only the items that are new since the previous check. Older history is converted once on the first start after the update, which can take a few extra seconds; on a long-used computer the database shrank from about 310 MB to 42 MB and Scoutly's memory use more than halved. Sync progress is saved as small updates instead of rewriting a file of several megabytes a few times per sync.
+- **Android:** updated components (Jetpack Compose 1.12), and a notification swiped away is deleted once the swipe has finished. The APK uses version code 51 and the existing upgrade-compatible signing certificate.
 
-**Supabase users:** no SQL change; the 1.12.34 SQL is current. If you have not run it yet, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Supabase-Free-Plan-1.12.35.sql) once in the existing project's SQL Editor: it adds step-by-step clearing for workspace deletion and pairing resets. Restarting the apps and pairing again are not needed, and apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Supabase-1.12.35.zip) includes usage queries.
+**Supabase users:** no SQL change; the 1.12.34 SQL is current. If you have not run it yet, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.36/Scoutly-Supabase-Free-Plan-1.12.36.sql) once in the existing project's SQL Editor: it adds step-by-step clearing for workspace deletion and pairing resets. Restarting the apps and pairing again are not needed, and apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.36/Scoutly-Supabase-1.12.36.zip) includes usage queries.
 
 ## What Scoutly does
 
@@ -43,9 +43,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Setup-1.12.35-x64.exe) | 1.12.35 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Portable-1.12.35-x64.exe) | 1.12.35 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.35/Scoutly-Mobile-1.4.35-release.apk) | 1.4.35 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.36/Scoutly-Setup-1.12.36-x64.exe) | 1.12.36 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.36/Scoutly-Portable-1.12.36-x64.exe) | 1.12.36 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.36/Scoutly-Mobile-1.4.36-release.apk) | 1.4.36 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -62,7 +62,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.35-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.36-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
