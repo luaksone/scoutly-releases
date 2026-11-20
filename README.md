@@ -1,7 +1,7 @@
 # Scoutly
 
-[![Windows](https://img.shields.io/badge/Windows-1.12.37-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
-[![Android](https://img.shields.io/badge/Android-1.4.37-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-1.12.38-0078D4?logo=windows11&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
+[![Android](https://img.shields.io/badge/Android-1.4.38-3DDC84?logo=android&logoColor=white)](https://github.com/luaksone/scoutly-releases/releases/latest)
 [![License](https://img.shields.io/badge/License-Freeware-4B5563)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/luaksone/scoutly-releases?label=Latest%20release&color=675CFF)](https://github.com/luaksone/scoutly-releases/releases/latest)
 
@@ -13,12 +13,12 @@ New to Scoutly? See the [getting-started guide](GETTING_STARTED.md) ([suomeksi](
 
 ## Latest package update
 
-Windows 1.12.37 and Android 1.4.37 make price readings safer, add live animations to both apps and make sync lighter. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.37). Both apps offer this release as an in-app update from 1.12.36 / 1.4.36.
+Windows 1.12.38 and Android 1.4.38 refresh both apps and improve desktop site reliability. See the [full release notes](https://github.com/luaksone/scoutly-releases/releases/tag/v1.12.38). Both apps offer this release as an in-app update from 1.12.37 / 1.4.37.
 
-- **Windows:** a price counts only when it really is an amount, so a shop page that briefly shows its product description where the price belongs can no longer record a wrong price; such misread prices are removed from the history on the first start after the update. A price at half of the previous one or lower is read again 20 seconds later before it replaces the price or sends an alert. Changed prices slide in with a short highlight, running checks show a light sweep, and sync uploads less.
-- **Android:** the same price safety, live animations for changed prices, running checks and trend lines, and swipe-to-check with a light vibration at the point where releasing starts the check. The APK uses version code 52 and the existing upgrade-compatible signing certificate.
+- **Windows:** refreshed light and dark surfaces, spacing, navigation and charts; Chromium-backed static requests; progressively longer shared cooldowns for sites that refuse requests; and clearer reporting of failing pages in multi-page monitors, with a notice after three days.
+- **Android:** refreshed light and dark surfaces, clearer monitor values, photo tiles, consistent spacing and updated form and choice controls. The APK uses version code 53 and the existing upgrade-compatible signing certificate.
 
-**Supabase users:** no SQL change; the 1.12.34 SQL is current. If you have not run it yet, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.37/Scoutly-Supabase-Free-Plan-1.12.37.sql) once in the existing project's SQL Editor: it adds step-by-step clearing for workspace deletion and pairing resets. Restarting the apps and pairing again are not needed, and apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.37/Scoutly-Supabase-1.12.37.zip) includes usage queries.
+**Supabase users:** no SQL change; the 1.12.34 SQL is current. If you have not run it yet, run [the complete Free Plan SQL upgrade](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.38/Scoutly-Supabase-Free-Plan-1.12.38.sql) once in the existing project's SQL Editor: it adds step-by-step clearing for workspace deletion and pairing resets. Restarting the apps and pairing again are not needed, and apps from 1.12.25 / 1.4.25 keep working with it. [The SQL bundle and setup guide](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.38/Scoutly-Supabase-1.12.38.zip) includes usage queries.
 
 ## What Scoutly does
 
@@ -43,9 +43,9 @@ The Windows application also provides listing comparison, correction, and advanc
 
 | Platform | Package | Version |
 | --- | --- | --- |
-| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.37/Scoutly-Setup-1.12.37-x64.exe) | 1.12.37 |
-| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.37/Scoutly-Portable-1.12.37-x64.exe) | 1.12.37 |
-| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.37/Scoutly-Mobile-1.4.37-release.apk) | 1.4.37 |
+| Windows | [Installer](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.38/Scoutly-Setup-1.12.38-x64.exe) | 1.12.38 |
+| Windows | [Portable application](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.38/Scoutly-Portable-1.12.38-x64.exe) | 1.12.38 |
+| Android | [APK](https://github.com/luaksone/scoutly-releases/releases/download/v1.12.38/Scoutly-Mobile-1.4.38-release.apk) | 1.4.38 |
 
 The Windows installer adds Scoutly to the system normally. The portable build can be run without installation. Android may require permission to install applications from the browser or file manager used to open the APK.
 
@@ -62,7 +62,7 @@ SHA-256 hashes for the current packages are listed in [SHA256SUMS.txt](SHA256SUM
 On Windows, a downloaded file can be checked with PowerShell:
 
 ```powershell
-Get-FileHash .\Scoutly-Setup-1.12.37-x64.exe -Algorithm SHA256
+Get-FileHash .\Scoutly-Setup-1.12.38-x64.exe -Algorithm SHA256
 ```
 
 Compare the reported hash with the corresponding entry in `SHA256SUMS.txt`. Versions 1.12.18 / 1.4.19 also verify future releases against the publisher key embedded in the app and [signed release manifest](scoutly-release-manifest.json).
